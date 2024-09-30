@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Shop</title>
+    <link rel="stylesheet" href="accueil.css">
+</head>
+
+
+ <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+        $("#header").load("../Head/header.html"); 
+        $("#footer").load("../footer/footer.html");
+        });
+      
+    </script> 
+
+<body>
+        
+        
+    <div id="header"></div>
+
+    <main>
+        <section class="promo-section">
+            <div class="product-image">
+                <img src="Capture.PNG" alt="Produit en promotion">
+            </div>
+            <div class="promo-text">
+                <div id="countdown"></div>
+                <h2>Promotion Spéciale !</h2>
+                <hr>
+                <p>Profitez de notre incroyable produit à un prix réduit ! Ne manquez pas cette opportunité unique.</p>
+                <div class="buttons">
+                    <button class="btn-description">Description</button>
+                    <button class="btn-add">Ajouter au panier</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 American Shop. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour le décompte
+        const countdown = () => {
+            const countDate = new Date("Dec 31, 2024 23:59:59").getTime();
+            const now = new Date().getTime();
+            const gap = countDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+            const textMinute = Math.floor((gap % hour) / minute);
+            const textSecond = Math.floor((gap % minute) / second);
+
+            document.getElementById("countdown").innerHTML = 
+                `Promotion se termine dans : ${textDay}j ${textHour}h ${textMinute}m ${textSecond}s`;
+
+            if (gap < 0) {
+                document.getElementById("countdown").innerHTML = "Promotion terminée !";
+            }
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+
+    <div id="footer"></div>
+</body>
+</html>
