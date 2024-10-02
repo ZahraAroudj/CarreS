@@ -168,6 +168,180 @@ button {
     background-color: #ff5722;
 }
 
+
+/* Section des nouveautés */
+.new-products-section {
+    padding: 50px;
+    text-align: center;
+    
+}
+
+.new-products-section h2 {
+    font-size: 36px;
+    color: #9c27b0;
+    margin-bottom: 30px;
+}
+
+.product-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-wrapper {
+    width: 80%;
+    overflow: hidden; /* Cache les produits en dehors du cadre */
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animation fluide */
+    justify-content: space-between; /* Ajout de l'espace entre les produits */
+}
+
+.product-item {
+    flex: 0 0 25%; /* Affiche des cartes plus petites, environ 4 produits visibles */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styles des cartes */
+.card {
+    background-color: #fff; /* Couleur de fond blanche pour les cartes */
+    border-radius: 10px; /* Bordures arrondies */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    padding: 15px;
+    margin: 0 10px; /* Espacement entre les cartes */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus large au survol */
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Image plus petite */
+    object-fit: cover;
+    border-radius: 10px; /* Image avec des bordures arrondies */
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 16px;
+    color: #9c27b0;
+    margin-bottom: 15px;
+}
+
+.carousel-control {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: #7b1fa2;
+}
+
+
+
+/* Section Produits */
+.products-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f3e5f5; /* Violet clair */
+}
+
+.products-section h2 {
+    font-size: 36px;
+    color: #9c27b0;
+    margin-bottom: 30px;
+}
+
+.product-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-wrapper {
+    width: 80%;
+    overflow: hidden; /* Masque les produits en dehors du cadre */
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animation fluide */
+    justify-content: space-between;
+}
+
+.product-item {
+    flex: 0 0 30%; /* Largeur d'une carte produit */
+    padding: 10px;
+    text-align: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Cela force un carré */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rend l'image bien ajustée au carré */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent noir */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.text-overlay h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Boutons de contrôle du carrousel */
+.carousel-control {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: #7b1fa2;
+}
+
+
+
+
 footer {
     text-align: center;
     padding: 10px;
