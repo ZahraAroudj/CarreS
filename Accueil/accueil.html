@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>American Shop</title>
     <link rel="stylesheet" href="accueil.css">
+
+    <!-- Charge jQuery en version 3.6.0 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<body>
 
- <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
+    <!-- Script pour charger le header et le footer -->
     <script> 
         $(function(){
-        $("#header").load("../Head/header.html"); 
-        $("#footer").load("../footer/footer.html");
-        });
-      
-    </script> 
+            // Charge le header
+            $("#header").load("../Head/header.html", function(response, status, xhr) {
+                if (status === "error") {
+                    console.log("Erreur lors du chargement du header : " + xhr.status + " " + xhr.statusText);
+                }
+            });
 
-<body>
-        
-        
+            // Charge le footer
+            $("#footer").load("../footer/footer.html", function(response, status, xhr) {
+                if (status === "error") {
+                    console.log("Erreur lors du chargement du footer : " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        });
+    </script>
+
+    <!-- Header chargé dynamiquement -->
     <div id="header"></div>
 
     <main>
@@ -44,9 +52,8 @@
         </section>
     </main>
 
-
+    <!-- Script pour le décompte -->
     <script>
-        // Script pour le décompte
         const countdown = () => {
             const countDate = new Date("Dec 31, 2024 23:59:59").getTime();
             const now = new Date().getTime();
@@ -70,81 +77,118 @@
             }
         };
 
+        // Démarre le décompte dès le chargement de la page
         setInterval(countdown, 1000);
     </script>
 
-<section class="new-products-section">
-    <h2>Nos Nouveautés</h2>
-    <div class="product-carousel">
-        <button class="carousel-control prev">&larr;</button>
-        <div class="carousel-wrapper">
-            <div class="carousel-items">
-                <!-- Premier produit -->
-                <div class="product-item card">
-                    <img src="product1.jpg" alt="Produit 1">
-                    <h3>Produit 1</h3>
-                    <p>20,00€</p>
-                </div>
-                <!-- Deuxième produit -->
-                <div class="product-item card">
-                    <img src="product2.jpg" alt="Produit 2">
-                    <h3>Produit 2</h3>
-                    <p>35,00€</p>
-                </div>
-                <!-- Troisième produit -->
-                <div class="product-item card">
-                    <img src="product3.jpg" alt="Produit 3">
-                    <h3>Produit 3</h3>
-                    <p>15,00€</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control next">&rarr;</button>
-    </div>
-</section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="carousel.js"></script>
-
-</section>
-
-<section class="products-section"></section>
-    <h2>Nos Produits</h2>
-    <div class="product-carousel">
-        <button class="carousel-control prev">&larr;</button>
-        <div class="carousel-wrapper">
-            <div class="carousel-items">
-                <!-- Premier produit -->
-                <div class="product-item card">
-                    <div class="image-wrapper">
+    <!-- Section des nouveaux produits -->
+    <section class="new-products-section">
+        <h2>Nos Nouveautés</h2>
+        <div class="product-carousel">
+            <button class="carousel-control prev">&larr;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-items">
+                    <!-- Premier produit -->
+                    <div class="product-item card">
                         <img src="product1.jpg" alt="Produit 1">
-                        <div class="text-overlay">
-                            <h3>Produit 1</h3>
-                        </div>
+                        <h3>Produit 1</h3>
+                        <p>20,00€</p>
                     </div>
-                </div>
-                <!-- Deuxième produit -->
-                <div class="product-item card">
-                    <div class="image-wrapper">
+                    <!-- Deuxième produit -->
+                    <div class="product-item card">
                         <img src="product2.jpg" alt="Produit 2">
-                        <div class="text-overlay">
-                            <h3>Produit 2</h3>
-                        </div>
+                        <h3>Produit 2</h3>
+                        <p>35,00€</p>
+                    </div>
+                    <!-- Troisième produit -->
+                    <div class="product-item card">
+                        <img src="product3.jpg" alt="Produit 3">
+                        <h3>Produit 3</h3>
+                        <p>15,00€</p>
                     </div>
                 </div>
-                <!-- Troisième produit -->
-                <div class="product-item card">
-                    <div class="image-wrapper">
-                        <img src="product3.jpg" alt="Produit 3">
-                        <div class="text-overlay">
-                            <h3>Produit 3</h3>
+            </div>
+            <button class="carousel-control next">&rarr;</button>
+        </div>
+    </section>
+
+    <!-- Section des produits -->
+    <section class="products-section">
+        <h2>Nos Produits</h2>
+        <div class="product-carousel">
+            <button class="carousel-control prev">&larr;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-items">
+                    <!-- Premier produit -->
+                    <div class="product-item card">
+                        <div class="image-wrapper">
+                            <img src="product1.jpg" alt="Produit 1">
+                            <div class="text-overlay">
+                                <h3>Produit 1</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Deuxième produit -->
+                    <div class="product-item card">
+                        <div class="image-wrapper">
+                            <img src="product2.jpg" alt="Produit 2">
+                            <div class="text-overlay">
+                                <h3>Produit 2</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Troisième produit -->
+                    <div class="product-item card">
+                        <div class="image-wrapper">
+                            <img src="product3.jpg" alt="Produit 3">
+                            <div class="text-overlay">
+                                <h3>Produit 3</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <button class="carousel-control next">&rarr;</button>
         </div>
-        <button class="carousel-control next">&rarr;</button>
-    </div>
-</section>
+    </section>
+
+    <section class="video-section">
+        <h2>Nos Vidéos</h2> <!-- Titre centré -->
+        <div class="product-carousel">
+            <button class="carousel-control prev">&larr;</button>
+            <div class="carousel-wrapper">
+                <div class="carousel-items">
+                    <!-- Première vidéo -->
+                    <div class="video-item card">
+                        <video controls>
+                            <source src="video1.mp4" type="video/mp4">
+                        </video>
+                        <h3>Vidéo 1</h3>
+                    </div>
+                    <!-- Deuxième vidéo -->
+                    <div class="video-item card">
+                        <video controls>
+                            <source src="video2.mp4" type="video/mp4">
+                        </video>
+                        <h3>Vidéo 2</h3>
+                    </div>
+                    <!-- Troisième vidéo -->
+                    <div class="video-item card">
+                        <video controls>
+                            <source src="video3.mp4" type="video/mp4">
+                        </video>
+                        <h3>Vidéo 3</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control next">&rarr;</button>
+        </div>
+    </section>
+    <!-- Footer chargé dynamiquement -->
     <div id="footer"></div>
+
+    <!-- Script pour le carousel -->
+    <script src="carousel.js"></script>
+
 </body>
 </html>
